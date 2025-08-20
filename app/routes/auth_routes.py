@@ -1,6 +1,5 @@
 
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from app.services.user_service import UserService
 
 auth_bp = Blueprint('auth', __name__)
@@ -24,15 +23,11 @@ def login():
     user = user_service.authenticate(data['username'], data['password'])
     if not user:
         return jsonify({'msg': 'Invalid credentials'}), 401
-    additional_claims = {'username': user.username, 'name': user.name}
-    access_token = create_access_token(identity=user.id, additional_claims=additional_claims)
-    return jsonify({'access_token': access_token}), 200
+    
+    # Autenticación básica sin JWT por ahora
+    return jsonify({'msg': 'Login successful', 'user_id': user.id}), 200
 
 @auth_bp.route('/profile', methods=['GET'])
-@jwt_required()
 def profile():
-    user_id = get_jwt_identity()
-    user = user_service.get_user(user_id)
-    if not user:
-        return jsonify({'msg': 'User not found'}), 404
-    return jsonify(user.to_dict()), 200
+    # TODO: Implementar autenticación simple
+    return jsonify({'msg': 'Profile endpoint - authentication needed'}), 401

@@ -1,0 +1,12 @@
+Flask
+Flask-Migrate
+Flask-CORS
+SQLAlchemy
+werkzeug
+
+# Para base de datos MySQL
+pymysql
+mysqlclient
+
+# Para despliegue
+zappa
