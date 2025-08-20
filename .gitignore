@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtualenv
+venv/
+ENV/
+.env
+
+# VSCode
+.vscode/
+
+# Alembic/Migrations
+migrations/versions/*.pyc
+migrations/versions/*.pyo
+
+# AWS/Zappa
+*.zip
+*.json
+zappa_settings.json
+backend-dish-example-dev-template-*.json
+
+# Logs
+*.log
+
+# DBeaver
+.dbeaver-data-sources.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node/Angular (si tienes frontend en el mismo repo)
+node_modules/
+dist/
+
+# Others
+*.bak
+*.swp

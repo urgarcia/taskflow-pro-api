@@ -1,12 +1,13 @@
-
 from flask import Blueprint, request, jsonify, abort
 from app.services.task_service import TaskService
+from app.services.auth_cognito import cognito_jwt_required
 
 tasks_bp = Blueprint('tasks', __name__)
 task_service = TaskService()
 
 # GET /tasks: Obtener todas las tareas
 @tasks_bp.route('/tasks', methods=['GET'])
+@cognito_jwt_required
 def get_tasks():
     tasks = task_service.list_tasks()
     return jsonify([task.to_dict() for task in tasks]), 200
