@@ -8,6 +8,9 @@ werkzeug
 PyJWT==1.7.1
 requests
 
+# Para variables de entorno
+python-dotenv
+
 # Para base de datos MySQL
 pymysql
 mysqlclient

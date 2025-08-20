@@ -142,7 +142,10 @@ export COGNITO_APP_CLIENT_ID="your-app-client-id"
 # Ejecutar migraciones
 flask db upgrade
 
-# Ejecutar localmente
+# Ejecutar localmente (opción 1)
+python run.py
+
+# O ejecutar con Flask CLI (opción 2)
 flask run
 ```
 
