@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "app_function": "app.create_app",
+    "profile_name": null,
+    "project_name": "backend_dish_example",
+    "runtime": "python3.11",
+    "s3_bucket": "zappa-9b1fxaw25",
+    "aws_region": "us-east-1"
+  }
+}
