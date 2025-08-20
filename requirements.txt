@@ -4,6 +4,10 @@ Flask-CORS
 SQLAlchemy
 werkzeug
 
+# Para JWT SIN cryptography (versión antigua)
+PyJWT==1.7.1
+requests
+
 # Para base de datos MySQL
 pymysql
 mysqlclient

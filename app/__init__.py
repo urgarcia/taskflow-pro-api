@@ -11,7 +11,8 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', "mysql+pymysql://root:root@localhost:3306/dish_db")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    CORS(app, origins=["http://localhost:4200"])
+    # CORS para desarrollo - permite cualquier origen de localhost o cualquier origen
+    CORS(app, origins="*")
 
     from extensions import db
     db.init_app(app)
